@@ -2,6 +2,7 @@ package Project.S14_L2.Entities;
 
 import Project.S14_L2.EnumFile.StatoOrdine;
 import Project.S14_L2.EnumFile.StatoTavolo;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -94,6 +95,7 @@ public class ConfigurationFile {
 public int getCostoCoperto(@Value("${ordine.costoCoperto}")int costoCoperto){
     return costoCoperto;
 }
+
 @Bean(name="primo_ordine")
     public Ordine primoOrdine(){
     Ordine o1= new Ordine(primoTavolo(), menu(), 1, StatoOrdine.SERVITO,2,18);
